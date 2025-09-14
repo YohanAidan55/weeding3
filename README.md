@@ -68,3 +68,4 @@ export default tseslint.config([
 ])
 ```
 # weeding3
+# weeding3
