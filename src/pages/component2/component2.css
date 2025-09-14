@@ -1,0 +1,25 @@
+
+.homePage2 {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('../../assets/rsv.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.card2 {
+    width: 100%;
+    overflow: auto !important;
+    max-height: 95vh;
+    border-radius: 16px;
+    margin: 16px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 0.7 !important;
+}
+
