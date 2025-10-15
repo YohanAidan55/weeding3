@@ -9,6 +9,13 @@
     background-size: cover;
 }
 
+/* Hack iOS pour éviter le zoom/crop du background */
+@supports (-webkit-touch-callout: none) {
+    .homePage2 {
+        background-attachment: scroll !important;
+    }
+}
+
 .card2 {
     width: 100%;
     overflow: auto !important;
