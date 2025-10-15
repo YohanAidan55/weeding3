@@ -10,7 +10,7 @@ const Component2 = () => {
             className="homePage2"
             cardClass="card2"
             initial={{ opacity: 0, y: 30 }}
-            title="Houppa"
+            title="Houppa & Réception"
             subtitle="Shirel & Alexandre"
             subtitleSx={{ fontFamily: "var(--font-title)", color: "var(--color-primary)", mb: 2 }}
             onItineraryClick={() => openWaze(address)}

@@ -43,8 +43,12 @@ const EventCard: React.FC<EventCardProps> = ({
                     <MotionDiv initial={initial} animate={animate} transition={transition}>
                         <Typography
                             variant="h5"
-                            sx={{ color: "var(--color-primary)", fontFamily: "var(--font-title)" }}
-                            gutterBottom
+                            sx={{ color: "var(--color-primary)", fontFamily: "Cormorant Upright, serif",
+                                paddingBottom: "15px",
+                                textTransform: "uppercase",
+                                fontWeight: "normal",
+                                borderBottom: "1px solid rgba(164, 130, 48, 0.2);",
+                                borderColor: "darkgoldenrod"}}
                         >
                             {title}
                         </Typography>
@@ -54,7 +58,11 @@ const EventCard: React.FC<EventCardProps> = ({
                                 sx={{
                                     ...subtitleSx,
                                     color: "var(--color-primary)",
-                                    fontFamily: "var(--font-title)",
+                                    fontFamily: "cursive",
+                                    fontWeight: "400",
+                                    fontStyle: "normal",
+                                    marginTop: "20px",
+                                    marginBottom: "20px"
                                 }}
                                 gutterBottom
                             >

@@ -175,7 +175,10 @@ export default function MonFormulaire() {
                         component="form"
                         onSubmit={handleSubmit(onSubmit)}
                     >
-                        <Typography variant="h4" gutterBottom align="center" sx={{ color: "var(--color-primary)", fontFamily: "var(--font-title)" }}>
+                        <Typography variant="h4" gutterBottom align="center" sx={{ color: "var(--color-primary)", fontFamily: "var(--font-title)"
+                        , borderBottom: "1px solid rgba(164, 130, 48, 0.2);",
+                            borderColor: "darkgoldenrod",                                paddingBottom: "15px",
+                        }}>
                             Réponse
                         </Typography>
 
@@ -384,7 +387,7 @@ export default function MonFormulaire() {
                                 disabled={loading}
                                 sx={{
                                     width: "100%",
-                                    backgroundColor: loading ? "#ccc" : "#1976d2",
+                                    backgroundColor: loading ? "#ccc" : "#b9bd71",
                                     textTransform: "none"
                                 }}
                             >

@@ -67,7 +67,7 @@ export default function Component0({ onShowComponents }) {
             >
                 <Box
                     sx={{
-                        backgroundColor: "rgba(124, 131, 103, 0.9)", // bandeau semi-transparent
+                        backgroundColor: "#ada078", // bandeau semi-transparent
                         py: 0.5,
                         px: 0,
                         textAlign: "center",
@@ -91,11 +91,11 @@ export default function Component0({ onShowComponents }) {
                         variant="text"
                         onClick={onShowComponents}
                         sx={{
-                            color: "#d6b85a",
+                            color: "#ffffff",
                             fontFamily: "Cormorant Garamond, serif",
                             fontWeight: 500,
                             "&:hover": {
-                                color: "#b89c44",
+                                color: "#ffffff",
                             },
                         }}
                     >

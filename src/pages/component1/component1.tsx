@@ -11,27 +11,29 @@ const Component1 = () => {
             className="homePage1"
             cardClass="card1"
             initial={{ opacity: 0, y: 40 }}
-            title="Mariage civil"
+            title="La Mairie"
             subtitle="Shirel & Alexandre"
             subtitleSx={{ color: "#d63384", fontFamily: "var(--font-title)" }}
             onItineraryClick={() => openWaze(address)}
         >
             <Typography variant="body1" gutterBottom>
-                se diront<br /><strong>"Oui"</strong>
+                se diront <strong>"Oui"</strong>
             </Typography>
             <Typography variant="h6" sx={{ color: "var(--color-primary)", mt: 2 }}>
                 Mercredi 20 août 2024 à 16h30
             </Typography>
-            <Typography variant="body1" mt={2}>
-                à la mairie de Nogent-sur-Marne<br />
+            <Typography variant="body1" mt={2}  sx={{margin: "25px 0;"}} >
+                Mairie de Nogent-sur-Marne<br />
                 Pl. Roland Nungesser,<br />
                 94130 Nogent-sur-Marne
             </Typography>
-            <Typography variant="body2" mt={4}>
-                Un vin d'honneur et une réception henné<br />
-                suivront la cérémonie à partir de 17h30<br />
-                Au 3 rue de Patay,<br />
-                94500 Champigny-sur-Marne
+            <Typography sx={{ fontSize:"15px",color: "var(--color-primary)", mt: 2 }}>
+                La Mairie sera suivie d'un vin d'honneur<br />
+            </Typography>
+            <Typography variant="body1" mt={2}  sx={{margin: "25px 0;"}}>
+                Mairie de Nogent-sur-Marne<br />
+                Pl. Roland Nungesser,<br />
+                94130 Nogent-sur-Marne
             </Typography>
         </EventCard>
     );
