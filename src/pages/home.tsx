@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import {useRef, useState} from "react";
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import PauseIcon from '@mui/icons-material/Pause';
-import backgroundMusic from "../assets/music.mp3";
+import backgroundMusic from "../../public/assets/music.mp3";
 import { show } from "../appSlice.tsx";
 import Component5 from "./component5/component5.tsx";
 import Component1 from "./component1/component1.tsx";
