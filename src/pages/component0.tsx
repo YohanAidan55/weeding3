@@ -14,7 +14,7 @@ export default function Component0({ onShowComponents }) {
                 textAlign: "center",
                 position: "relative",
                 backgroundImage:
-                    "linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url('src/assets/background0.jpg')",
+                    "linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url('./src/assets/background0.jpg')",
                 backgroundSize: "cover, cover",
                 backgroundPosition: "center, center",
                 backgroundRepeat: "no-repeat, no-repeat",
@@ -52,7 +52,7 @@ export default function Component0({ onShowComponents }) {
             >
                 <Box
                     component="img"
-                    src="src/assets/logo.png" // mets ton logo papillon ici
+                    src="./src/assets/logo.png" // mets ton logo papillon ici
                     alt="Logo"
                     sx={{ width: 220, boxShadow: 3, borderRadius: 2 }}
                 />
