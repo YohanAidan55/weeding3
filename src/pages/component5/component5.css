@@ -1,39 +1,18 @@
+
 .homePage5 {
     width: 100vw;
-    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)),
-    url('../../../public/assets/reponse.png') no-repeat center center fixed;
+    min-height: 100vh;
+    background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('../../../public/assets/reponse.png') no-repeat center center fixed;
     background-size: cover;
 }
 
-/* Hack iOS pour simuler fixed sans zoom/crop */
+/* Hack iOS pour éviter le zoom/crop du background */
 @supports (-webkit-touch-callout: none) {
     .homePage5 {
         background-attachment: scroll !important;
-        position: relative;
-    }
-
-    .homePage5::before {
-        content: "";
-        position: fixed;
-        top: 0; left: 0;
-        width: 100%;
-        height: 100%;
-        background: url('../../../public/assets/reponse.png') center center / cover no-repeat;
-        z-index: -1;
-    }
-
-    .homePage5::after {
-        content: "";
-        position: fixed;
-        top: 0; left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7));
-        z-index: -1;
     }
 }
 
@@ -49,10 +28,14 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    opacity: 0.7 !important;
     height: calc(100vh - 50px);
+    /* Remplace l'opacité globale par un background semi-transparent */
+    background-color: rgba(255, 255, 255, 0.55)!important;
 }
+
 
 .card5 .MuiFormControlLabel-root {
     width: 100%; /* Ensure the label takes the full width */
 }
+
+

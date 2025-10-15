@@ -1,39 +1,18 @@
+
 .homePage2 {
     width: 100vw;
-    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)),
-    url('../../../public/assets/rsv.png') no-repeat center center fixed;
+    min-height: 100vh;
+    background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('../../../public/assets/rsv.png') no-repeat center center fixed;
     background-size: cover;
 }
 
-/* Hack iOS pour simuler fixed sans zoom/crop */
+/* Hack iOS pour éviter le zoom/crop du background */
 @supports (-webkit-touch-callout: none) {
     .homePage2 {
         background-attachment: scroll !important;
-        position: relative;
-    }
-
-    .homePage2::before {
-        content: "";
-        position: fixed;
-        top: 0; left: 0;
-        width: 100%;
-        height: 100%;
-        background: url('../../../public/assets/rsv.png') center center / cover no-repeat;
-        z-index: -1;
-    }
-
-    .homePage2::after {
-        content: "";
-        position: fixed;
-        top: 0; left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7));
-        z-index: -1;
     }
 }
 
@@ -49,6 +28,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    opacity: 0.7 !important;
+    background-color: rgba(255, 255, 255, 0.55)!important;
     height: calc(100vh - 50px);
+
 }
+
