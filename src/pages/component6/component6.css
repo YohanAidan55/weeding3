@@ -11,7 +11,7 @@
 
 /* Hack iOS pour éviter le zoom/crop du background */
 @supports (-webkit-touch-callout: none) {
-    .homePage5 {
+    .homePage6 {
         background-attachment: scroll !important;
     }
 }
