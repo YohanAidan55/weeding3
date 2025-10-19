@@ -43,11 +43,10 @@ const EventCard: React.FC<EventCardProps> = ({
                     <MotionDiv initial={initial} animate={animate} transition={transition}>
                         <Typography
                             variant="h5"
-                            sx={{ color: "var(--color-primary)", fontFamily: "Cormorant Upright, serif",
+                            sx={{ color: "var(--color-primary)",
                                 paddingBottom: "15px",
-                                textTransform: "uppercase",
-                                fontWeight: "normal",
                                 borderBottom: "1px solid rgba(164, 130, 48, 0.2);",
+                                fontSize: "2.5rem",
                                 borderColor: "darkgoldenrod"}}
                         >
                             {title}
@@ -58,10 +57,9 @@ const EventCard: React.FC<EventCardProps> = ({
                                 sx={{
                                     ...subtitleSx,
                                     color: "var(--color-primary)",
-                                    fontFamily: "cursive",
-                                    fontWeight: "400",
-                                    fontStyle: "normal",
                                     marginTop: "20px",
+                                    fontFamily: "Great Vibes, cursive",
+                                    fontSize: "3rem",
                                     marginBottom: "20px"
                                 }}
                                 gutterBottom
@@ -73,7 +71,7 @@ const EventCard: React.FC<EventCardProps> = ({
                         {button && (
                             <Button
                                 variant="outlined"
-                                sx={{ mt: 4, color: "var(--color-primary)", borderColor: "var(--color-primary)" }}
+                                sx={{ mt: 4, color: "var(--color-primary)", borderColor: "var(--color-primary)",fontSize: "1rem" }}
                                 onClick={onItineraryClick}
                             >
                                 {buttonLabel}

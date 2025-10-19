@@ -1,8 +1,8 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Cormorant Upright, serif", serif;
   line-height: 1;
   font-weight: 400;
---font-main: system-ui, Avenir, Helvetica, Arial, sans-serif;
+--font-main: "Cormorant Upright, serif";
 --font-title: 'Great Vibes', cursive;
 --color-primary: #6f633d;
 --color-secondary: #b8b89c;

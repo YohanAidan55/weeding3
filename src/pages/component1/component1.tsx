@@ -19,7 +19,7 @@ const Component1 = () => {
             <Typography variant="body1" gutterBottom>
                 se diront <strong>"Oui"</strong>
             </Typography>
-            <Typography variant="h6" sx={{ color: "var(--color-primary)", mt: 2 }}>
+            <Typography variant="h5" sx={{ color: "var(--color-primary)", mt: 2, fontWeight: "bold" }}>
                 Mercredi 20 août 2024 à 16h30
             </Typography>
             <Typography variant="body1" mt={2}  sx={{margin: "25px 0;"}} >
@@ -27,7 +27,7 @@ const Component1 = () => {
                 Pl. Roland Nungesser,<br />
                 94130 Nogent-sur-Marne
             </Typography>
-            <Typography sx={{ fontSize:"15px",color: "var(--color-primary)", mt: 2 }}>
+            <Typography variant="h6" sx={{ color: "var(--color-primary)", mt: 2, fontWeight: "bold" }}>
                 La Mairie sera suivie d'un vin d'honneur<br />
             </Typography>
             <Typography variant="body1" mt={2}  sx={{margin: "25px 0;"}}>

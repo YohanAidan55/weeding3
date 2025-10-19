@@ -175,8 +175,8 @@ export default function MonFormulaire() {
                         component="form"
                         onSubmit={handleSubmit(onSubmit)}
                     >
-                        <Typography variant="h4" gutterBottom align="center" sx={{ color: "var(--color-primary)", fontFamily: "var(--font-title)"
-                        , borderBottom: "1px solid rgba(164, 130, 48, 0.2);",
+                        <Typography variant="h4" gutterBottom align="center" sx={{ color: "var(--color-primary)", fontSize: "2.5rem",
+                         borderBottom: "1px solid rgba(164, 130, 48, 0.2);",
                             borderColor: "darkgoldenrod",                                paddingBottom: "15px",
                         }}>
                             Réponse
@@ -196,7 +196,7 @@ export default function MonFormulaire() {
                             rules={{ required: "Le nom est obligatoire" }}
                         />
 
-                        <Typography variant="h6" sx={{ mt: 2, fontFamily: "var(--font-title)" }}>
+                        <Typography variant="h5" sx={{ mt: 2}}>
                             Participation :
                         </Typography>
 
@@ -388,7 +388,8 @@ export default function MonFormulaire() {
                                 sx={{
                                     width: "100%",
                                     backgroundColor: loading ? "#ccc" : "#b6a341",
-                                    textTransform: "none"
+                                    textTransform: "none",
+                                    fontSize: "1.5rem",
                                 }}
                             >
                                 {loading ? (
