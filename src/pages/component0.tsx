@@ -78,29 +78,26 @@ export default function Component0({ onShowComponents }) {
                     }}
                 >
                     <Typography
-                        variant="subtitle1"
+                        variant="body1"
                         sx={{
-                            fontFamily: "Cormorant Garamond, serif",
                             color: "white",
                             fontWeight: 500,
+                            fontSize: "1.5rem",
                         }}
                     >
-                        MARIAGE SHIREL & ALEXANDRE
+                        Mariage Shirel & Alexandre
                     </Typography>
-                    <Button
-                        variant="text"
+                    <Typography
+                        variant="body1"
                         onClick={onShowComponents}
                         sx={{
-                            color: "#ffffff",
-                            fontFamily: "Cormorant Garamond, serif",
+                            color: "white",
                             fontWeight: 500,
-                            "&:hover": {
-                                color: "#ffffff",
-                            },
+                            fontSize: "1.5rem",
                         }}
                     >
                         Voir l’invitation
-                    </Button>
+                    </Typography>
                 </Box>
             </motion.div>
         </Box>
