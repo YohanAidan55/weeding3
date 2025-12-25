@@ -7,13 +7,11 @@ import { useFireworks } from "../shared/useFireworks.js";
 // @ts-ignore
 export default function Component0({ onShowComponents }) {
 
-    const reward = useFireworks("buttonId");
+   // const reward = useFireworks("buttonId");
 
     const handleClick = () => {
-        reward();              // 🎆 effet visuel
-            setTimeout(() => {
+       // reward();              // 🎆
                 onShowComponents();
-            }, 1500); // durée visible des fireworks
     };
 
     return (
