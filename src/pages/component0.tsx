@@ -1,8 +1,21 @@
 import { Box, Typography } from "@mui/material";
 import { motion } from "framer-motion";
+// @ts-ignore
+import { useFireworks } from "../shared/useFireworks.js";
+
 
 // @ts-ignore
 export default function Component0({ onShowComponents }) {
+
+    const reward = useFireworks("buttonId");
+
+    const handleClick = () => {
+        reward();              // 🎆 effet visuel
+            setTimeout(() => {
+                onShowComponents();
+            }, 1500); // durée visible des fireworks
+    };
+
     return (
         <Box
             sx={{
@@ -20,7 +33,7 @@ export default function Component0({ onShowComponents }) {
                 backgroundRepeat: "no-repeat, no-repeat",
             }}
         >
-            {/* בס״ד en haut à droite */}
+            {/* בס״ד */}
             <Typography
                 variant="body2"
                 sx={{
@@ -36,7 +49,7 @@ export default function Component0({ onShowComponents }) {
                 בס״ד
             </Typography>
 
-            {/* Logo animé */}
+            {/* Logo */}
             <motion.div
                 initial={{ opacity: 0, y: -30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -52,7 +65,7 @@ export default function Component0({ onShowComponents }) {
             >
                 <Box
                     component="img"
-                    src="assets/logo.png" // ✅ ne pas mettre /src/
+                    src="assets/logo.png"
                     alt="Logo"
                     sx={{ width: 220, boxShadow: 3, borderRadius: 2 }}
                 />
@@ -69,12 +82,10 @@ export default function Component0({ onShowComponents }) {
                     sx={{
                         backgroundColor: "#ada078",
                         py: 0.5,
-                        px: 0,
                         textAlign: "center",
                         display: "flex",
                         flexDirection: "column",
                         alignItems: "center",
-                        justifyContent: "center",
                     }}
                 >
                     <Typography
@@ -87,19 +98,22 @@ export default function Component0({ onShowComponents }) {
                     >
                         Mariage Shirel & Alexandre
                     </Typography>
-                    <Typography
-                        variant="body1"
-                        onClick={() => {
-                            onShowComponents();
-                        }}
-                        sx={{
-                            color: "white",
-                            fontWeight: 500,
-                            fontSize: "1.5rem",
-                        }}
-                    >
-                        Voir l’invitation
-                    </Typography>
+
+                    {/* 🎆 Bouton avec effet */}
+                    <span id="buttonId">
+                        <Typography
+                            variant="body1"
+                            onClick={handleClick}
+                            sx={{
+                                color: "white",
+                                fontWeight: 500,
+                                fontSize: "1.5rem",
+                                cursor: "pointer",
+                            }}
+                        >
+                            Voir l’invitation
+                        </Typography>
+                    </span>
                 </Box>
             </motion.div>
         </Box>
