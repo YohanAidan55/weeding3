@@ -20,7 +20,7 @@ const Component1 = () => {
                 se diront <strong>"Oui"</strong>
             </Typography>
             <Typography variant="h5" sx={{ color: "var(--color-primary)", mt: 2, fontWeight: "bold" }}>
-                Jeudi 7 Mai 2026 à 15h
+                Jeudi 7 Mai 2026 à 14h30
             </Typography>
             <Typography variant="body1" mt={2}  sx={{margin: "25px 0;"}} >
                 Mairie de Saint-Brice-sous-Forêt<br />

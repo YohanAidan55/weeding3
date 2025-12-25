@@ -3,7 +3,7 @@ import { useReward } from "partycles";
 export function useFireworks(buttonId) {
     const { reward } = useReward(buttonId, "hearts", {
         "animationType": "hearts",
-        "particleCount": 120,
+        "particleCount": 60,
         "spread": 70,
         "startVelocity": 12,
         "elementSize": 30,
