@@ -10,8 +10,10 @@ export default function Component0({ onShowComponents }) {
     const reward = useFireworks("buttonId");
 
     const handleClick = () => {
-        reward();              // 🎆 eff
+        reward();              // 🎆 effet visuel
+            setTimeout(() => {
                 onShowComponents();
+            }, 1500); // durée visible des fireworks
     };
 
     return (
