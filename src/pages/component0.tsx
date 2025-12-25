@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import { motion } from "framer-motion";
+import { fireInvitationConfetti } from "../shared/ConfetyFire";
 
 // @ts-ignore
 export default function Component0({ onShowComponents }) {
@@ -89,7 +90,10 @@ export default function Component0({ onShowComponents }) {
                     </Typography>
                     <Typography
                         variant="body1"
-                        onClick={onShowComponents}
+                        onClick={() => {
+                            onShowComponents();
+                            fireInvitationConfetti();
+                        }}
                         sx={{
                             color: "white",
                             fontWeight: 500,
