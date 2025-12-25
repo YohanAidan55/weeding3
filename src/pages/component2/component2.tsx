@@ -20,9 +20,8 @@ const Component2 = () => {
             </Typography>
             <Box sx={{ display: "flex", justifyContent: "space-between", my: 2, fontSize: '14px', lineHeight: '1.5' }}>
                 <div style={{textAlign: "left"}}>
-                    Régis Vigier<br/>
-                    Jacqueline Lasry<br/>
-                    Sandrine et Cyril Vigier
+                    Patrick Nabet<br/>
+                    Corinne Elbaz<br/>
                 </div>
                 <div style={{textAlign: "right"}}>
                     Danielle et René Parienti<br/>
@@ -33,7 +32,7 @@ const Component2 = () => {
                 ont la joie de vous faire part du mariage de leurs petits-enfants et enfants
             </Typography>
             <Typography variant="h5" sx={{ color: "var(--color-primary)", mt: 2, fontWeight: "bold"  }}>
-                Dimanche 10 Mai 2026 à 16h30
+                Dimanche 10 Mai 2026 à 17h
             </Typography>
             <Typography variant="body1" sx={{ mt: 1 }}>
                 La Verrière 91<br />
@@ -45,7 +44,7 @@ const Component2 = () => {
             </Typography>
             <Typography variant="body2" sx={{display: "block", mt: 4, fontStyle: "italic"}}>
                 Une pensée particulière pour nos grands-parents Joseph et Odette Flah,
-                Albert Lasry, et Mercedes Vigier, qui veilleront sur nous en ce jour particulier.
+                qui veilleront sur nous en ce jour particulier.
             </Typography>
         </EventCard>
     );
