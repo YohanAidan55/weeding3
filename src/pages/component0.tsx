@@ -1,16 +1,10 @@
 import { Box, Typography } from "@mui/material";
 import { motion } from "framer-motion";
-// @ts-ignore
-import { useFireworks } from "../shared/useFireworks.js";
-
 
 // @ts-ignore
 export default function Component0({ onShowComponents }) {
 
-   // const reward = useFireworks("buttonId");
-
     const handleClick = () => {
-       // reward();              // 🎆
                 onShowComponents();
     };
 
@@ -65,7 +59,7 @@ export default function Component0({ onShowComponents }) {
                     component="img"
                     src="assets/logo.png"
                     alt="Logo"
-                    sx={{ width: 220, boxShadow: 3, borderRadius: 2 }}
+                    sx={{ width: 0, boxShadow: 3, borderRadius: 2 }}
                 />
             </motion.div>
 

@@ -20,7 +20,7 @@ const Component2 = () => {
             </Typography>
             <Box sx={{ display: "flex", justifyContent: "space-between", my: 2, fontSize: '14px', lineHeight: '1.5' }}>
                 <div style={{textAlign: "left"}}>
-                    Patrick Nabet<br/>
+                    Patrick Nabeth<br/>
                     Corinne Elbaz<br/>
                 </div>
                 <div style={{textAlign: "right"}}>
@@ -44,6 +44,7 @@ const Component2 = () => {
             </Typography>
             <Typography variant="body2" sx={{display: "block", mt: 4, fontStyle: "italic"}}>
                 Une pensée particulière pour nos grands-parents Joseph et Odette Flah,
+                Claude, Noelle Elbaz, Alfred et Hélène Nabeth,
                 qui veilleront sur nous en ce jour particulier.
             </Typography>
         </EventCard>
