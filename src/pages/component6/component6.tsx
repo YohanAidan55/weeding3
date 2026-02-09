@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import {Box, Card, CardContent, Typography, type TypographyProps} from "@mui/material";
+import { Box, Card, CardContent, Typography, type TypographyProps } from "@mui/material";
 import { motion, useInView } from "framer-motion";
 import "./component6.css";
 
@@ -26,6 +26,37 @@ function clampTimeLeft(diffMs: number): TimeLeft {
   };
 }
 
+function calculateTimeLeft(): TimeLeft {
+  const now = Date.now();
+  const diff = TARGET_DATE_MS - now;
+  return clampTimeLeft(diff);
+}
+
+function useCountdown(): TimeLeft {
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(() => {
+        const next = calculateTimeLeft();
+        if (
+          next.days === 0 &&
+          next.hours === 0 &&
+          next.minutes === 0 &&
+          next.seconds === 0
+        ) {
+          clearInterval(timer);
+        }
+        return next;
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  return timeLeft;
+}
+
 type AnimatedTypographyProps = TypographyProps & {
   children: React.ReactNode;
 };
@@ -46,68 +77,107 @@ const AnimatedTypography = ({ children, variant, ...props }: AnimatedTypographyP
       </Typography>
     </motion.div>
   );
-
-};
-
-const Component6 = () => {
-  const calculateTimeLeft = (): TimeLeft => {
-    const now = Date.now();
-    const diff = TARGET_DATE_MS - now;
-    return clampTimeLeft(diff);
-  };
-
-  const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft());
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(() => {
-        const now = Date.now();
-        const next = clampTimeLeft(TARGET_DATE_MS - now);
-        // Stop the interval once countdown reaches zero to avoid unnecessary updates
-        if (
-          next.days === 0 &&
-          next.hours === 0 &&
-          next.minutes === 0 &&
-          next.seconds === 0
-        ) {
-          clearInterval(timer);
-        }
-        return next;
-      });
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  return (
-      <Box className="homePage6">
-          <Card className="card6">
-              <CardContent>
-                  <AnimatedTypography variant="h4" fontWeight="bold" gutterBottom>
-                    Save The Date
-                  </AnimatedTypography>
-                  <AnimatedTypography variant="h6">10 Mai 2026</AnimatedTypography>
-                  <Box display="flex" justifyContent="center" gap={2} mt={2}>
-                    <TimeBlock label="Jours" value={timeLeft.days} />
-                    <TimeBlock label="Heures" value={timeLeft.hours} />
-                    <TimeBlock label="Minutes" value={timeLeft.minutes} />
-                    <TimeBlock label="Secondes" value={timeLeft.seconds} />
-                  </Box>
-              </CardContent>
-          </Card>
-    </Box>
-  );
 };
 
 type TimeBlockProps = { label: string; value: number };
 
 const TimeBlock = ({ label, value }: TimeBlockProps) => (
   <Box textAlign="center">
-    <AnimatedTypography variant="h5" fontWeight="bold">
+    <AnimatedTypography
+      variant="h3"
+      sx={{ fontFamily: "inherit", fontSize: { xs: "1.5rem", sm: "1.5rem", md: "1.5rem" } }}
+    >
       {value}
     </AnimatedTypography>
-    <Typography variant="body2">{label}</Typography>
+    <Typography
+      variant="body1"
+      fontWeight="bold"
+      sx={{ fontFamily: "'Cormorant Upright', serif", fontSize: { xs: "1rem", sm: "1.1rem", md: "1.2rem" } }}
+    >
+      {label}
+    </Typography>
   </Box>
 );
+
+type SaveTheDateCardProps = {
+  title?: string;
+  ctaLabel?: string;
+  onCtaClick?: () => void;
+  showSaveTheDateTitle?: boolean; // afficher le titre "Save The Date"
+};
+
+export const SaveTheDateCard = ({
+  title,
+  ctaLabel,
+  onCtaClick,
+  showSaveTheDateTitle = true,
+}: SaveTheDateCardProps) => {
+  const timeLeft = useCountdown();
+
+  return (
+    <Card className="card6">
+      <CardContent>
+        <Box
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+          gap={2}
+          sx={{ fontFamily: "'Cormorant Upright', serif" }}
+        >
+          {title && (
+            <AnimatedTypography
+              variant="h5"
+              fontWeight="bold"
+              sx={{ fontSize: "1.5rem" }}
+            >
+              {title}
+            </AnimatedTypography>
+          )}
+          {showSaveTheDateTitle && (
+            <AnimatedTypography
+              variant="h3"
+              fontWeight="bold"
+              sx={{ fontSize: { xs: "2rem", sm: "2.25rem", md: "2.5rem" } }}
+            >
+              Save The Date
+            </AnimatedTypography>
+          )}
+          <AnimatedTypography
+            variant="h5"
+            fontWeight="bold"
+            sx={{ fontSize: "1.5rem" }}
+          >
+            10.05.2026
+          </AnimatedTypography>
+          <Box display="flex" justifyContent="center" gap={2}>
+            <TimeBlock label="Jours" value={timeLeft.days} />
+            <TimeBlock label="Heures" value={timeLeft.hours} />
+            <TimeBlock label="Minutes" value={timeLeft.minutes} />
+            <TimeBlock label="Secondes" value={timeLeft.seconds} />
+          </Box>
+
+          {ctaLabel && (
+            <Typography
+              variant="body1"
+              fontWeight="bold"
+              onClick={onCtaClick}
+              sx={{ fontSize: "1.5rem", cursor: "pointer" }}
+            >
+              {ctaLabel}
+            </Typography>
+          )}
+        </Box>
+      </CardContent>
+    </Card>
+  );
+};
+
+const Component6 = () => {
+  return (
+    <Box className="homePage6">
+      <SaveTheDateCard />
+    </Box>
+  );
+};
 
 export default Component6;

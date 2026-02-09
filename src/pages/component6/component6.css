@@ -18,10 +18,12 @@
 
 .card6 {
     width: 100%;
-    overflow: auto !important;
+    max-width: 720px;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
     max-height: 95vh;
     border-radius: 16px;
-    margin: 16px;
+    margin: 16px auto;
     text-align: center;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
     display: flex;
@@ -34,6 +36,10 @@
 
 .card6 .MuiFormControlLabel-root {
     width: 100%; /* Ensure the label takes the full width */
+}
+
+.card6 .MuiCardContent-root {
+    padding: 7px !important;
 }
 
 

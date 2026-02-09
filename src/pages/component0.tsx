@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import { motion } from "framer-motion";
+import { SaveTheDateCard } from "./component6/component6";
 
 // @ts-ignore
 export default function Component0({ onShowComponents }) {
@@ -63,50 +64,19 @@ export default function Component0({ onShowComponents }) {
                 />
             </motion.div>
 
-            {/* Bandeau */}
+            {/* Save the Date intégré */}
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5, duration: 1 }}
                 style={{ width: "100%" }}
             >
-                <Box
-                    sx={{
-                        backgroundColor: "#ada078",
-                        py: 0.5,
-                        textAlign: "center",
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                    }}
-                >
-                    <Typography
-                        variant="body1"
-                        sx={{
-                            color: "white",
-                            fontWeight: 500,
-                            fontSize: "1.5rem",
-                        }}
-                    >
-                        Mariage Shirel & Alexandre
-                    </Typography>
-
-                    {/* 🎆 Bouton avec effet */}
-                    <span id="buttonId">
-                        <Typography
-                            variant="body1"
-                            onClick={handleClick}
-                            sx={{
-                                color: "white",
-                                fontWeight: 500,
-                                fontSize: "1.5rem",
-                                cursor: "pointer",
-                            }}
-                        >
-                            Voir l’invitation
-                        </Typography>
-                    </span>
-                </Box>
+                <SaveTheDateCard
+                    title="Mariage Shirel & Alexandre"
+                    ctaLabel="Voir l’invitation"
+                    onCtaClick={handleClick}
+                    showSaveTheDateTitle={false}
+                />
             </motion.div>
         </Box>
     );
