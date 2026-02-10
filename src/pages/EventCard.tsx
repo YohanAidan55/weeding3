@@ -58,7 +58,7 @@ const EventCard: React.FC<EventCardProps> = ({
                                     ...subtitleSx,
                                     color: "var(--color-primary)",
                                     marginTop: "20px",
-                                    fontFamily: "Great Vibes, cursive",
+                                    fontFamily: "'Valentina Orchestra', sans-serif",
                                     fontSize: "3rem",
                                     marginBottom: "20px"
                                 }}
