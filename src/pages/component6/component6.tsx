@@ -4,7 +4,11 @@ import { motion, useInView } from "framer-motion";
 import "./component6.css";
 
 // Countdown target date as a constant to avoid re-creating each render
-const TARGET_DATE_MS = new Date("2026-05-10T00:00:00").getTime();
+const TARGET_DATE_MS = new Date(
+    new Date("2026-05-10T00:00:00").toLocaleString("en-US", {
+        timeZone: "Europe/Paris",
+    })
+).getTime();
 
 type TimeLeft = {
   days: number;
@@ -26,10 +30,16 @@ function clampTimeLeft(diffMs: number): TimeLeft {
   };
 }
 
+function getParisNowMs(): number {
+    return new Date(
+        new Date().toLocaleString("en-US", { timeZone: "Europe/Paris" })
+    ).getTime();
+}
+
 function calculateTimeLeft(): TimeLeft {
-  const now = Date.now();
-  const diff = TARGET_DATE_MS - now;
-  return clampTimeLeft(diff);
+    const now = getParisNowMs();
+    const diff = TARGET_DATE_MS - now;
+    return clampTimeLeft(diff);
 }
 
 function useCountdown(): TimeLeft {
